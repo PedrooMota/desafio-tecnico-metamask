@@ -1,0 +1,1 @@
+export { MetaMaskError } from './metaMaskError'

@@ -1,30 +1,116 @@
-# React + TypeScript + Vite
+<h3 align="center"> Projeto designado para o desafio Front-End do processo seletivo da Zeta. </h3>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Sumário
 
-Currently, two official plugins are available:
+- [Descrição do projeto](#descrição-do-projeto)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Aplicação](#aplicação)
 
-## Expanding the ESLint configuration
+- [Ferramentas utilizadas](#ferramentas-utilizadas)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [Acesso ao projeto](#acesso-ao-projeto)
 
-- Configure the top-level `parserOptions` property like this:
+- [Passo a Passo](#passo-a-passo)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+
+# Descrição do Projeto
+Foi desenvolvido uma aplicação React que exibe uma lista de criptomoedas e permite que o usuário visualize informações detalhadas sobre cada uma delas e interaja com uma wallet de criptomoedas, como Metamask, demonstrando a habilidade de conectar a aplicação React a smart contracts.
+
+
+# Aplicação
+
+### Listagem de moedas.
+
+  ![image](https://github.com/PedrooMota/desafio-tecnico-metamask/assets/83295376/8c4c83a0-f046-4423-bbf4-38bb86a28789)
+
+<hr>
+
+### Detalhes de uma moeda específica.
+
+![detalhes-moeda](https://github.com/PedrooMota/desafio-tecnico-metamask/assets/83295376/a78d8720-2e7e-4255-8f4a-3a2f5deccad3)
+
+
+![detalhes-moeda2](https://github.com/PedrooMota/desafio-tecnico-metamask/assets/83295376/7c31265c-d35f-4d0b-9690-9346da07cfe0)
+
+### O site está completamente responsivo, tornando a experiência do usuário ainda mais versátil ao poder utilizar quaisquer telas (computadores, laptops, tablets ou celulares). 
+
+<hr>
+
+
+# Ferramentas utilizadas
+
+- [VsCode](https://code.visualstudio.com/) - Ferramenta utilizada para a aplicação.
+- [React](https://pt-br.reactjs.org/) - React é um framework JavaScript criado pelo Facebook (atual Meta) que é usado para criar interfaces de usuário (UI) em aplicativos web. Ele é popular por ser fácil de usar, altamente flexível e escalável, e é usado por muitas empresas de tecnologia, incluindo o Facebook, Instagram e Airbnb.
+- [TypeScript](https://www.typescriptlang.org/) - Linguagem de programação de código aberto desenvolvida pela Microsoft. É um superconjunto sintático estrito de JavaScript e adiciona tipagem estática opcional à linguagem.
+- [Tailwind](https://tailwindcss.com/docs/installation) -O Tailwind CSS é um framework CSS de código aberto que permite criar rapidamente estilos personalizados para seus projetos.
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=vscode,react,ts,tailwind&perline=14" />
+</div>
+<hr>
+
+
+# Acesso ao projeto
+
+### Você pode acessar a página por aqui-> <a target="_blank" href="https://zeta-frontend-b9zrvkqem-pedroomota.vercel.app/">Acessar</a>
+
+
+**O projeto está hospedado na Vercel, plataforma primariamente voltada para sites estáticos e frameworks front-end. Também é a atual responsável pelo Next, que é um <a target="_blank" href="https://opensource.com/article/20/1/react-javascript-frameworks">framework open source React</a>.**
+
+
+# Passo a Passo
+
+#### Instale a ferramenta Vscode <br><a target="_blank" href="https://code.visualstudio.com/">Vscode</a><br>
+#### Instale o node para executarmos o NPM <br> <a target="_blank" href="https://opensource.com/article/20/1/react-javascript-frameworks">Node</a>
+
+
+#### Depois de instalados, abra o terminal-> **WINDOWS + R e abra o CMD** <br>
+#### Logo, execute o seguinte comando para criarmos uma pasta chamada "myapp":
+
+```sh
+mkdir project
+```
+<hr>
+
+#### E em seguida, você irá executar o comando para "entrarmos" dentro da pasta criada:
+```sh
+cd project
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Clone este repositório na sua pasta utilizando o seguinte comando:
+
+```sh
+git clone https://github.com/PedrooMota/Zeta-Seletiva-Frontend
+```
+
+### Caso você queira abrir sua pasta dentro do Vscode, basta utilizar este comando (Não é obrigatório)
+
+```sh
+code .
+```
+
+<hr>
+
+#### Depois de clonado, você deverá acessar a pasta que foi criada com os arquivos:
+
+```sh
+cd Zeta-Seletiva-Frontend
+```
+<hr>
+
+#### Agora, basta apenas instalar as dependências que estão no package.json:
+
+```sh
+npm install
+```
+<hr>  
+
+### Após a instalação, você estará próximo de rodar o projeto! 
+
+#### Para inicializar o projeto localmente, utilize:
+
+```sh
+npm run dev
+```
+
+## Depois de rodar o projeto, basta acessar o link que foi disponibilizado em seu terminal!!

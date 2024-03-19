@@ -1,3 +1,5 @@
+import { API_KEY } from "@/@types";
+
 interface CoinData {
     id: string;
     symbol: string;
@@ -14,7 +16,7 @@ interface CoinData {
 
 async function getCoinData(coinId: string): Promise<CoinData> {
     try {
-        const response = await fetch(`https://api.coingecko.com/api/v3/coins/${coinId}`);
+        const response = await fetch(`https://api.coingecko.com/api/v3/coins/${coinId}&x_cg_demo_api_key=${API_KEY}`);
         if (!response.ok) {
             throw new Error('Failed to fetch data');
         }

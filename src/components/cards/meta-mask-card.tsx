@@ -11,7 +11,7 @@ export function MetaMaskCard() {
     return (
         <>
             <div className="flex flex-col col-span-full sm:col-span-4 sm:items-center xl:col-span-4 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
-                <div className="px-3 py-5 text-center ">
+                <div className="px-3 py-4 text-center ">
                     <h2 className="font-semibold text-slate-800 dark:text-slate-100 text-2xl">
                         {
                             hasProvider && wallet.accounts.length > 0 ? 'Você está conectado!'

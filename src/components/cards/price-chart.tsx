@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import OperationAccumulatedChart from "../charts/operation-value";
+import OperationCurrencyChart from "../charts/operation-currency";
 
 import {
     ToggleGroup,
@@ -43,22 +43,42 @@ export function PriceChart({ id, coins, price }: Props) {
         <div className="flex flex-col col-span-full sm:col-span-8 xl:col-span-8 shadow-lg rounded-sm h-[350px] mb-4 ">
             <header className="px-5 py-4 flex items-center">
                 <h2 className="font-semibold text-3xl text-slate-800 dark:text-slate-100">
-                    {Currency(price, coins)} {' '}
-                    {
-                        Number(priceChange) < 0 ? (
-                            <span className="text-red-500">
-                                {priceChange}%
-                            </span>
-                        ) : (
-                            <span className="text-emerald-500">
-                                {priceChange}%
-                            </span>
-                        )
-                    }
+                    {price ? (
+                        <div>
+                            {Currency(price, coins)} {' '}
+                            {
+                                Number(priceChange) < 0 ? (
+                                    <span className="text-red-500">
+                                        {priceChange}%
+                                    </span>
+                                ) : (
+                                    <span className="text-emerald-500">
+                                        {priceChange}%
+                                    </span>
+                                )
+                            }
+                        </div>
+
+                    ) : (
+                        <div>
+                            {Currency(0, 'usd')} {' '}
+                            {
+                                Number(priceChange) < 0 ? (
+                                    <span className="text-red-500">
+                                        {priceChange}%
+                                    </span>
+                                ) : (
+                                    <span className="text-emerald-500">
+                                        {priceChange}%
+                                    </span>
+                                )
+                            }
+                        </div>
+                    )}
                 </h2>
             </header>
             <div className="text-base font-medium">
-                <ToggleGroup type="single" defaultValue="1" onValueChange={setToggleMoment} className="mt-2">
+                <ToggleGroup type="single" defaultValue="1" onValueChange={setToggleMoment} className="mt-1">
                     <ToggleGroupItem value="1" aria-label="24 horas">
                         1D
                     </ToggleGroupItem>
@@ -73,7 +93,7 @@ export function PriceChart({ id, coins, price }: Props) {
                     </ToggleGroupItem>
                 </ToggleGroup>
             </div>
-            <OperationAccumulatedChart
+            <OperationCurrencyChart
                 prices={crypto}
                 timestamps={timestamps}
             />

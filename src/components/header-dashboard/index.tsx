@@ -9,7 +9,6 @@ export default function Header() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 -mb-px">
 
-          {/* Header: Right side */}
           <div className="flex items-center space-x-3">
 
             <Logo />
@@ -25,7 +24,6 @@ export default function Header() {
             <Separator orientation="vertical" className="h-6" />
           </div>
 
-          {/* Calendar on the right side */}
           <div className="ml-auto flex">
             <ThemeSwitcher />
           </div>

@@ -37,3 +37,5 @@ export interface Currency {
     market_cap: number;
     high_24h: number
 }
+// API-Key para poder realizar mais requisições na API da CoinGecko
+export const API_KEY = 'CG-JbuXFDp5Qs4v1JcYcy7qCy6m'

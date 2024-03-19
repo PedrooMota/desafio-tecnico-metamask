@@ -5,15 +5,15 @@ import Chart from 'react-apexcharts'
 import { emerald } from 'tailwindcss/colors'
 import { CardContent } from '../ui/card';
 
-interface OperationAccumulatedChartProps {
+interface DataCurrencyProps {
     prices: number[];
     timestamps: string[];
 }
 
-export default function OperationAccumulatedChart({
+export default function OperationCurrencyChart({
     prices,
     timestamps,
-}: OperationAccumulatedChartProps) {
+}: DataCurrencyProps) {
     const { theme } = useTheme()
 
     return (
@@ -21,7 +21,7 @@ export default function OperationAccumulatedChart({
             <Chart
                 type="area"
                 width="100%"
-                height={260}
+                height={255}
                 options={{
                     chart: {
                         id: 'webhook-events-amount-chart',

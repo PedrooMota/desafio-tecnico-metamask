@@ -36,13 +36,6 @@ export function ThemeSwitcher() {
           <Moon className="h-4 w-4" />
           Dark
         </DropdownMenuItem>
-        {/* <DropdownMenuItem
-          className="flex items-center gap-2"
-          onClick={() => setTheme('system')}
-        >
-          <Monitor className="h-4 w-4" />
-          System
-        </DropdownMenuItem> */}
       </DropdownMenuContent>
     </DropdownMenu>
   )

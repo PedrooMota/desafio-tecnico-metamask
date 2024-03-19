@@ -64,15 +64,15 @@ Foi desenvolvido uma aplicação React que exibe uma lista de criptomoedas e per
 #### Instale o node para executarmos o NPM <br> <a target="_blank" href="https://opensource.com/article/20/1/react-javascript-frameworks">Node</a>
 
 
-#### Depois de instalados, abra o terminal-> **WINDOWS + R e abra o CMD** <br>
-#### Logo, execute o seguinte comando para criarmos uma pasta chamada "myapp":
+#### Depois de instalados, abra o terminal-> **WINDOWS + R e abra o cmd** <br>
+#### Logo, execute o seguinte comando para criar uma pasta
 
 ```sh
 mkdir project
 ```
 <hr>
 
-#### E em seguida, você irá executar o comando para "entrarmos" dentro da pasta criada:
+#### E em seguida, você irá executar o comando para entrar dentro da pasta criada
 ```sh
 cd project
 ```
@@ -83,7 +83,13 @@ cd project
 git clone https://github.com/PedrooMota/Zeta-Seletiva-Frontend
 ```
 
-### Caso você queira abrir sua pasta dentro do Vscode, basta utilizar este comando (Não é obrigatório)
+#### Depois de clonado, você deverá acessar a pasta que foi criada com os arquivos:
+
+```sh
+cd desafio-tecnico-metamask
+```
+
+### Agora, abra o VSCode com o projeto
 
 ```sh
 code .
@@ -91,23 +97,15 @@ code .
 
 <hr>
 
-#### Depois de clonado, você deverá acessar a pasta que foi criada com os arquivos:
 
-```sh
-cd Zeta-Seletiva-Frontend
-```
-<hr>
-
-#### Agora, basta apenas instalar as dependências que estão no package.json:
+#### Agora, basta apenas instalar as dependências utilizadas no projeto
 
 ```sh
 npm install
 ```
-<hr>  
 
-### Após a instalação, você estará próximo de rodar o projeto! 
 
-#### Para inicializar o projeto localmente, utilize:
+#### Para inicializar o projeto:
 
 ```sh
 npm run dev

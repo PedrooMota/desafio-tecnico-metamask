@@ -1,4 +1,6 @@
-<h2 align="center"> Projeto designado para um vaga Front-end REACT </h3>
+<h2 align="center">Projeto designado para um vaga Front-end REACT</h2>
+
+
 
 # Sumário
 

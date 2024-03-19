@@ -1,4 +1,4 @@
-<h3 align="center"> Projeto designado para o desafio Front-End do processo seletivo da Zeta. </h3>
+<h2 align="center"> Projeto designado para um vaga Front-end REACT </h3>
 
 # Sumário
 
@@ -67,27 +67,33 @@ Foi desenvolvido uma aplicação React que exibe uma lista de criptomoedas e per
 #### Depois de instalados, abra o terminal-> **WINDOWS + R e abra o cmd** <br>
 #### Logo, execute o seguinte comando para criar uma pasta
 
+
 ```sh
 mkdir project
 ```
 <hr>
 
-#### E em seguida, você irá executar o comando para entrar dentro da pasta criada
+
+### E em seguida, você irá executar o comando para entrar dentro da pasta criada
 ```sh
 cd project
 ```
 
-### Clone este repositório na sua pasta utilizando o seguinte comando:
+### Clone este repositório na sua pasta utilizando o seguinte comando
+
 
 ```sh
-git clone https://github.com/PedrooMota/Zeta-Seletiva-Frontend
+git clone https://github.com/PedrooMota/desafio-tecnico-metamask.git
 ```
 
-#### Depois de clonado, você deverá acessar a pasta que foi criada com os arquivos:
+
+### Depois de clonado, você deverá acessar a pasta que foi criada com os arquivos
+
 
 ```sh
 cd desafio-tecnico-metamask
 ```
+
 
 ### Agora, abra o VSCode com o projeto
 
@@ -95,17 +101,27 @@ cd desafio-tecnico-metamask
 code .
 ```
 
+
 <hr>
 
 
-#### Agora, basta apenas instalar as dependências utilizadas no projeto
+### Com o VSCode aberto, abra o terminal
+
+```sh
+ctrl + shift + '
+```
+
+<hr>
+
+
+### Agora, basta apenas instalar as dependências utilizadas no projeto
 
 ```sh
 npm install
 ```
 
 
-#### Para inicializar o projeto:
+### Finalmente, inicie a aplicação
 
 ```sh
 npm run dev

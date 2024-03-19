@@ -81,3 +81,18 @@ html.dark .shiki span {
 .apexcharts-tooltip {
   @apply !shadow-none border;
 }
+
+/* Scroll */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4ade80;
+}

@@ -1,65 +1,35 @@
-import { useEffect } from "react";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
+import { Currency } from "@/data/currency-function";
 
-// bg - white dark: bg - slate - 800
-import { CryptoData } from "@/@types";
-import { displayCoinComparisonData } from "@/data/fetch-list-currencies";
+interface PropsBitcoinNews {
+    name: string;
+    symbol: string;
+    current_price: number;
+    coins: string;
+    market_cap: number;
+    high_24h: number
+}
 
-export function HistoryTable({ id, name, coins }: CryptoData) {
-
-    console.log(id)
-
-    // const [historyOne, setHistoryOne] = useState<HistoryProps>();
-
-    useEffect(() => {
-        async function fetchHistory() {
-            try {
-                await displayCoinComparisonData(coins);
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-        fetchHistory()
-    }, [coins])
+export function BitcoinNews({ symbol, name, current_price, coins, market_cap, high_24h }: PropsBitcoinNews) {
 
     return (
-        <div className="col-span-full xl:col-span-8 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
-            <header className="px-5 py-4 ">
-                <h2 className="font-semibold text-slate-800 dark:text-slate-100 text-xl">Histórico de preço do {name} é de {coins.toLocaleUpperCase()}</h2>
-            </header>
+        <div className="col-span-full xl:col-span-8 shadow-lg">
             <div className="p-3">
-                {/* Table */}
                 <div className="overflow-x-auto">
-                    <Table>
-                        <TableHeader>
-                            <TableRow className="text-white font-medium bg-zinc-950">
-                                <TableCell className="text-left">Comparação de datas</TableCell>
-                                <TableCell className='text-center'>Alteração de valor</TableCell>
-                                <TableCell className='text-center'>Variação de %</TableCell>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            <TableRow className="text-black dark:text-white font-medium ">
-                                <TableHead className="text-left">Hoje</TableHead>
-                                <TableHead className="text-center">awdwadaw</TableHead>
-                                <TableHead className="text-center">dawdaw</TableHead>
-                            </TableRow>
-
-                            <TableRow className="text-black dark:text-white font-medium ">
-                                <TableHead className="text-left">30 dias</TableHead>
-                                <TableHead className="text-center">aasdad</TableHead>
-                                <TableHead className="text-center">awdwad</TableHead>
-                            </TableRow>
-
-                            <TableRow className="text-black dark:text-white font-medium">
-                                <TableHead className="text-left">60 dias</TableHead>
-                                <TableHead className="text-center">asdad</TableHead>
-                                <TableHead className="text-center">awda</TableHead>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
+                    <div className="col-span-5 mt-6">
+                        <div className='justify-between'>
+                            <span className='text-3xl font-bold'>Valor de {symbol && symbol.toLocaleUpperCase()} de hoje</span>
+                            <div className='mt-2'>
+                                <span className=' font-semibold text-sm text-zinc-400'>
+                                    O valor em tempo real de {name} é de {current_price ? Currency(current_price, coins) : '00,00 '}
+                                    com uma capitalização de mercado atual de {Currency(market_cap, coins)}.
+                                    O volume de trading em 24 horas é de {Currency(high_24h, coins)}.
+                                    O valor de BTC para BRL é atualizado em tempo real.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }

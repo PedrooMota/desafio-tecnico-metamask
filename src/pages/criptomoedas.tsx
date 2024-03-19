@@ -5,15 +5,16 @@ import { Crypto } from '@/@types';
 import { Loading } from '@/components/loading';
 import { CalendarDateRangePicker } from '@/components/date-range-picker';
 
-import { CardDadosHora } from '@/components/cards/dados-hora';
+import { PriceChart } from '@/components/cards/price-chart';
 import { MetaMaskCard } from '@/components/cards/meta-mask-card';
 
 import { SelectCoin } from '@/components/summary/dashboard-popover';
 
 import WelcomeBanner from '@/components/partials/banner';
 import { Select } from '@/components/ui/select';
-import { HistoryTable } from '@/components/cards/history-table';
+import { BitcoinNews } from '@/components/cards/history-table';
 import { ProgressHighLow } from '@/components/cards/progress-high-low';
+import { fetchCoinData } from '@/data/fetch-high-low';
 
 export default function Criptomoedas() {
     const params = useParams<{ id: string }>();
@@ -23,12 +24,8 @@ export default function Criptomoedas() {
 
     useEffect(() => {
         async function getDataCrypto() {
-            fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${coins}&ids=${params.id}`)
-                .then(response => response.json())
-                .then(data => {
-                    setCrypto(data[0])
-                })
-                .catch(error => console.error('Erro ao recuperar os dados:', error));
+            const data = await fetchCoinData(params.id as string, coins)
+            setCrypto(data)
         }
         getDataCrypto()
     }, [params, coins])
@@ -56,14 +53,21 @@ export default function Criptomoedas() {
                     <div className="grid grid-cols-12 gap-4">
 
                         <Suspense fallback={<Loading />}>
-                            <CardDadosHora id={params.id as string} coins={coins} name={crypto?.name as string} />
+                            <PriceChart id={params.id as string} coins={coins} price={crypto?.current_price as number} />
                         </Suspense>
 
                         <MetaMaskCard />
                     </div>
 
                     <div className="grid grid-cols-12 gap-4 mt-4">
-                        <HistoryTable id={params.id as string} coins={coins} name={crypto?.name as string} />
+                        <BitcoinNews
+                            name={crypto?.name as string}
+                            coins={coins as string}
+                            current_price={crypto?.current_price as number}
+                            symbol={crypto?.symbol as string}
+                            high_24h={crypto?.high_24h as number}
+                            market_cap={crypto?.market_cap as number}
+                        />
 
                         <ProgressHighLow id={params.id as string} coins={coins} />
                     </div>
@@ -71,27 +75,6 @@ export default function Criptomoedas() {
             </main >
         </div >
 
-        //         <div className="col-span-5 mt-6">
-        //             <div className='justify-between'>
-        //                 <span className='text-3xl font-bold'>Valor de {crypto?.symbol.toUpperCase()} de hoje</span>
-        //                 <div className='mt-2'>
-        //                     <span className=' font-semibold text-sm text-zinc-400'>
-        //                         O valor em tempo real de {crypto?.name} é de
-        //                         {
-        //                             coins === 'usd' ? ' $' + crypto?.current_price.toFixed(2) + ' '
-        //                                 : coins === 'eur' ? ' €' + crypto?.current_price.toFixed(2) + ' '
-        //                                     : coins === 'brl' ? ' R$' + crypto?.current_price.toFixed(2) + ' '
-        //                                         : ' ' + crypto?.current_price.toFixed(2) + ''
-        //                         }
-        //                         com uma capitalização de mercado atual de {market_cap}.
-        //                         O volume de trading em 24 horas é de R$ {crypto?.high_24h.toFixed(2)}.
-        //                         O valor de BTC para BRL é atualizado em tempo real.
-        //                         Bitcoin está a -3.51% nas últimas 24 horas, com uma oferta em circulação de 19.66M.
-        //                     </span>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
+
     );
 }

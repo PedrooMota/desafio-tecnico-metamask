@@ -15,17 +15,12 @@ export default function Header() {
             <Logo />
 
             <Separator orientation="vertical" className="h-6" />
+
             <nav className="flex items-center space-x-2 lg:space-x-3">
               <a href="/" className='flex h-16 items-center border-b-2 border-transparent px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:border-emerald-500 data-[current=true]:border-blue-400 data-[current=true]:text-accent-foreground'>
                 Mercado
               </a>
             </nav>
-            {/* 
-            <nav className="flex items-center space-x-2 lg:space-x-3">
-              <NavLinkTeste to={'/'}>
-                Mercado
-              </NavLinkTeste>
-            </nav> */}
 
             <Separator orientation="vertical" className="h-6" />
           </div>

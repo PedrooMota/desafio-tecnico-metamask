@@ -1,43 +1,23 @@
 import { useEffect, useState } from "react";
-
-import { ProcessedData, PriceData } from "@/@types";
 import OperationAccumulatedChart from "../charts/operation-value";
 
 import {
     ToggleGroup,
     ToggleGroupItem,
 } from "@/components/ui/toggle-group"
+
 import { fetchBitcoinPrices } from "@/data/fetch-bitcoin-prices";
-
-function processPriceData(data: { prices: [number, number][]; }): ProcessedData {
-    const prices: PriceData[] = data.prices.map(([timestamp, price]: [number, number]) => ({
-        timestamp,
-        price
-    }));
-
-    // Juntando todos os timestamps dos preços da moeda
-    const timestamps: string[] = prices.map(priceData => {
-        const date = new Date(priceData.timestamp);
-
-        // Formatação da data e hora local
-        return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
-    });
-
-    // Juntando todos os preços da moeda
-    const priceValues: number[] = prices.map(priceData => priceData.price);
-    return {
-        timestamps,
-        prices: priceValues
-    };
-}
+import { Currency } from "@/data/currency-function";
+import { PriceChange } from "@/data/price-change-function";
+import { processPriceData } from "@/data/process-price-data";
 
 interface Props {
     id: string;
     coins: string;
-    name: string;
+    price: number
 }
 
-export function CardDadosHora({ id, coins, name }: Props) {
+export function PriceChart({ id, coins, price }: Props) {
 
     const [crypto, setCrypto] = useState<number[]>([])
     const [timestamps, setTimestamps] = useState<string[]>([])
@@ -56,23 +36,18 @@ export function CardDadosHora({ id, coins, name }: Props) {
                 return null
             }
 
-            const firstPrice = data.prices[0][1];
-            const lastPrice = data.prices[data.prices.length - 1][1];
-            const priceChange = ((lastPrice - firstPrice) / firstPrice) * 100;
-            const formattedChange = priceChange.toFixed(2);
+            const formattedChange = PriceChange(data)
             setPriceChange(formattedChange)
         }
 
         fetchCoins()
     }, [id, toggleMoment, coins])
 
-    // bg-white dark:bg-slate-800
-    // border border-slate-200 dark:border-slate-700
     return (
         <div className="flex flex-col col-span-full sm:col-span-8 xl:col-span-8 shadow-lg rounded-sm h-[350px] ">
             <header className="px-5 py-4 flex items-center">
-                <h2 className="font-semibold text-2xl text-slate-800 dark:text-slate-100">
-                    Preço do {name} {' '}
+                <h2 className="font-semibold text-3xl text-slate-800 dark:text-slate-100">
+                    {Currency(price, coins)} {' '}
                     {
                         Number(priceChange) < 0 ? (
                             <span className="text-red-500">

@@ -29,3 +29,11 @@ export interface Crypto {
     price_change_percentage_24h: number;
     market_cap_rank: number;
 }
+
+export interface Currency {
+    name: string;
+    symbol: string;
+    current_price: number;
+    market_cap: number;
+    high_24h: number
+}

@@ -32,10 +32,6 @@ export function PriceChart({ id, coins, price }: Props) {
             setTimestamps(res.timestamps)
             setCrypto(res.prices)
 
-            if (data < 2) {
-                return null
-            }
-
             const formattedChange = PriceChange(data)
             setPriceChange(formattedChange)
         }
@@ -44,7 +40,7 @@ export function PriceChart({ id, coins, price }: Props) {
     }, [id, toggleMoment, coins])
 
     return (
-        <div className="flex flex-col col-span-full sm:col-span-8 xl:col-span-8 shadow-lg rounded-sm h-[350px] ">
+        <div className="flex flex-col col-span-full sm:col-span-8 xl:col-span-8 shadow-lg rounded-sm h-[350px] mb-4 ">
             <header className="px-5 py-4 flex items-center">
                 <h2 className="font-semibold text-3xl text-slate-800 dark:text-slate-100">
                     {Currency(price, coins)} {' '}

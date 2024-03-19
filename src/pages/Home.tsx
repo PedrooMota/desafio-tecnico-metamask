@@ -3,6 +3,8 @@ import { Table, TableCaption, TableCell, TableHeader, TableRow } from '@/compone
 
 export function Home() {
 
+  document.title = 'Mercado | Home'
+
   return (
     <>
       <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">

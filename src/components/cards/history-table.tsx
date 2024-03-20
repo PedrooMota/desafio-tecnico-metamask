@@ -25,7 +25,7 @@ export function BitcoinNews({ currency, coins }: PropsBitcoinNews) {
                                     O valor em tempo real de {currency?.name} é de {currency?.current_price ? Currency(currency.current_price, coins) : '00,00 '}
                                     com uma capitalização de mercado atual de {currency?.current_price && Currency(currency?.market_cap, coins)}.
                                     O volume de trading em 24 horas é de {currency?.current_price && Currency(currency.high_24h, coins)}.
-                                    O valor de BTC para BRL é atualizado em tempo real.
+                                    O valor de {currency && currency?.symbol.toUpperCase()} para {coins && coins.toUpperCase()} é atualizado em tempo real.
                                 </span>
                             </div>
                         </div>

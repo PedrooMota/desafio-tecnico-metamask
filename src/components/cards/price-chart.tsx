@@ -35,7 +35,6 @@ export function PriceChart({ id, coins, price }: Props) {
             const formattedChange = PriceChange(data)
             setPriceChange(formattedChange)
         }
-
         fetchCoins()
     }, [id, toggleMoment, coins])
 

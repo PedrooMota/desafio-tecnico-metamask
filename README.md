@@ -108,10 +108,10 @@ code .
 <hr>
 
 
-### Com o VSCode aberto, abra o terminal
+### Com o VSCode aberto, abra o terminal dentro do VSCode
 
 ```sh
-ctrl + shift + '
+CTRL + SHIFT + '
 ```
 
 <hr>
@@ -130,4 +130,4 @@ npm install
 npm run dev
 ```
 
-## Depois de rodar o projeto, basta acessar o link que foi disponibilizado em seu terminal!!
+## Acesse o link que foi disponiblizado em seu terminal para acessar a aplicação localmente.

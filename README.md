@@ -54,7 +54,7 @@ Foi desenvolvido uma aplicação React que exibe uma lista de criptomoedas e per
 
 # Acesso ao projeto
 
-### Você pode acessar a página por aqui-> <a target="_blank" href="https://zeta-frontend-b9zrvkqem-pedroomota.vercel.app/">Acessar</a>
+### Você pode acessar a página por aqui-> <a target="_blank" href="https://desafio-tecnico-metamask-yjng.vercel.app/">Acessar</a>
 
 
 **O projeto está hospedado na Vercel, plataforma primariamente voltada para sites estáticos e frameworks front-end. Também é a atual responsável pelo Next, que é um <a target="_blank" href="https://opensource.com/article/20/1/react-javascript-frameworks">framework open source React</a>.**
